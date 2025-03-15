@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "417077471440",
+    "project_id": "dlu-messenger",
+    "storage_bucket": "dlu-messenger.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417077471440:android:471c727b27810672e256d5",
+        "android_client_info": {
+          "package_name": "com.example.dlu_messenger"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArKRqLEwJiyWzYenh7EHqj1qbhWOftgA4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
