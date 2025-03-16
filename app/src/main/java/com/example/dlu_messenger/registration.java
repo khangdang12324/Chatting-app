@@ -1,6 +1,7 @@
 package com.example.dlu_messenger;
 
 import android.app.ComponentCaller;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -44,6 +45,7 @@ public class registration extends AppCompatActivity {
     String emailPatTern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
     FirebaseDatabase database;
     FirebaseStorage storage;
+    ProgressDialog progressDialog;
 
 
     @Override
@@ -56,6 +58,10 @@ public class registration extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Establishing The Account");
+        progressDialog.setCancelable(false);
 
         database = FirebaseDatabase.getInstance();
         storage = FirebaseStorage.getInstance();
@@ -74,6 +80,7 @@ public class registration extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(registration.this, login.class);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out); // Hiệu ứng mượt
                 finish();
             }
         });
@@ -89,12 +96,16 @@ public class registration extends AppCompatActivity {
                 
                 if (TextUtils.isEmpty(name) || TextUtils.isEmpty(emaill) ||
                         TextUtils.isEmpty(Password) || TextUtils.isEmpty(cPassword)) {
+                    progressDialog.dismiss();
                     Toast.makeText(registration.this, "Please Enter Valid Information", Toast.LENGTH_SHORT).show();
                 } else if (!emaill.matches(emailPatTern)) {
+                    progressDialog.dismiss();
                     rg_email.setError("Type A Valid Email Here");
                 } else if (Password.length() < 6) {
+                    progressDialog.dismiss();
                     rg_password.setError("Password Must Be 6 Character Or More");
                 } else if (!Password.equals(cPassword)) {
+                    progressDialog.dismiss();
                     rg_password.setError("The Password Doesn't Match");
                 } else {
                     auth.createUserWithEmailAndPassword(emaill, Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -119,6 +130,7 @@ public class registration extends AppCompatActivity {
                                                             @Override
                                                             public void onComplete(@NonNull Task<Void> task) {
                                                                 if (task.isSuccessful()) {
+                                                                    progressDialog.show();
                                                                     Intent intent = new Intent(registration.this, MainActivity.class);
                                                                     startActivity((intent));
                                                                     finish();
@@ -137,6 +149,7 @@ public class registration extends AppCompatActivity {
                                                     @Override
                                                     public void onComplete(@NonNull Task<Void> task) {
                                                         if (task.isSuccessful()) {
+                                                            progressDialog.show();
                                                             Intent intent = new Intent(registration.this, MainActivity.class);
                                                             startActivity((intent));
                                                             finish();
