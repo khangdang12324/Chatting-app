@@ -191,7 +191,7 @@
         android:layout_width="96dp"
         android:layout_height="24dp"
         android:gravity="center_vertical"
-        android:text="Login"
+        android:text="LOGIN"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
