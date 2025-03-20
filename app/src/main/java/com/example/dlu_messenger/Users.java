@@ -1,10 +1,17 @@
 package com.example.dlu_messenger;
 
 public class Users {
-    String profilepic, mail, userName, password, userId, lastMessage, status;
+    String profilepic,mail,userName,password,userId,lastMessage,status;
 
-    public Users(String id, String name, String emaill, String password, String cPassword, String imageuri) {
+    public  Users(){}
 
+    public Users(String userId, String userName, String maill, String password, String profilepic, String status) {
+        this.userId = userId;
+        this.userName = userName;
+        this.mail = maill;
+        this.password = password;
+        this.profilepic = profilepic;
+        this.status = status;
     }
 
     public String getProfilepic() {
@@ -31,20 +38,20 @@ public class Users {
         this.userName = userName;
     }
 
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
     public String getPassword() {
         return password;
     }
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getLastMessage() {

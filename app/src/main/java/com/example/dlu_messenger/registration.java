@@ -53,7 +53,7 @@ public class registration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_registration);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.mainUserRecyclerView), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
@@ -93,7 +93,7 @@ public class registration extends AppCompatActivity {
                 String Password = rg_password.getText().toString();
                 String cPassword = rg_repassword.getText().toString();
                 String status = "Hey I'm Using This Application";
-                
+
                 if (TextUtils.isEmpty(name) || TextUtils.isEmpty(emaill) ||
                         TextUtils.isEmpty(Password) || TextUtils.isEmpty(cPassword)) {
                     progressDialog.dismiss();
@@ -113,6 +113,7 @@ public class registration extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 String id = task.getResult().getUser().getUid();
+                                FirebaseDatabase database = FirebaseDatabase.getInstance();
                                 DatabaseReference reference = database.getReference().child("user").child(id);
                                 StorageReference storageReference = storage.getReference().child("Upload").child(id);
 
@@ -161,6 +162,12 @@ public class registration extends AppCompatActivity {
                                             }
                                         }
                                     });
+                                } else {
+                                    // Không có ảnh, lưu thông tin ngay lập tức
+                                    String status = "Hey I'm Using This Application";
+                                    String defaultImage = "https://www.creativefabrica.com/wp-content/uploads/2022/07/04/Female-user-avatar-Generic-app-profile-Graphics-33541506-1.png";
+                                    Users users = new Users(id, name, emaill, Password, defaultImage, status);
+                                    reference.setValue(users);
                                 }
                             } else {
                                 Toast.makeText(registration.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();

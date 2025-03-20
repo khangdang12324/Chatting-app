@@ -27,6 +27,7 @@
             android:gravity="center">
             
             <TextView
+                android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_bold"
@@ -35,6 +36,7 @@
                 android:textSize="23.40dp"/>
             
             <TextView
+                android:id="@+id/userstatus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"

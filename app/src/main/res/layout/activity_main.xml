@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/mainUserRecyclerVieww"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/mainback"
@@ -47,6 +47,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mainUserRecyclerView"
         android:layout_width="376dp"
         android:layout_height="380dp"
         android:layout_below="@id/toolBar"
@@ -94,6 +95,4 @@
         android:layout_marginRight="99dp"
         android:layout_marginBottom="42dp"
         android:src="@drawable/sett" />
-
-
 </RelativeLayout>
