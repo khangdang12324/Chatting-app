@@ -40,10 +40,10 @@
         <ImageView
             android:id="@+id/logoutimg"
             android:layout_width="@dimen/_28sdp"
-            android:layout_height="@dimen/_28sdp"
+            android:layout_height="34dp"
             android:layout_gravity="center"
-            android:background="@drawable/logout"
-            android:layout_marginRight="@dimen/_10sdp"/>
+            android:layout_marginRight="@dimen/_10sdp"
+            android:background="@drawable/logout" />
 
     </LinearLayout>
 
@@ -57,12 +57,12 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="167dp"
-        android:layout_marginEnd="19dp"
-        android:layout_marginRight="19dp"
-        android:layout_marginBottom="104dp" />
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="159dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="110dp" />
 
     <ImageView
         android:layout_width="47dp"
@@ -96,4 +96,5 @@
         android:layout_marginRight="99dp"
         android:layout_marginBottom="42dp"
         android:src="@drawable/sett" />
+
 </RelativeLayout>

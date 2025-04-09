@@ -1,5 +1,6 @@
 package com.example.dlu_messenger;
 
+import android.content.Intent;
 import android.content.pm.LabeledIntent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,6 +42,18 @@ public class UserAdpter extends RecyclerView.Adapter<UserAdpter.viewholder> {
         holder.username.setText(users.userName);
         holder.userstatus.setText(users.status);
         Picasso.get().load(users.profilepic).into(holder.userimg);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mainActivity, chatWin.class);
+                intent.putExtra("nameeee",users.getUserName());
+                intent.putExtra("reciverImg",users.getProfilepic());
+                intent.putExtra("uid",users.getUserId());
+                mainActivity.startActivity(intent);
+
+            }
+        });
     }
 
     @Override
