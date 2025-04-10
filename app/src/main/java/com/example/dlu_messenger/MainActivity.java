@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseDatabase database;
     ArrayList<Users> usersArrayList;
     ImageView imglogout;
+    ImageView cumbut,setbut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
 
         database=FirebaseDatabase.getInstance();
         auth = FirebaseAuth.getInstance();
+        cumbut = findViewById(R.id.camBut);
+        setbut = findViewById(R.id.settingBut);
 
         DatabaseReference reference = database.getReference().child("user");
 
@@ -106,6 +109,22 @@ public class MainActivity extends AppCompatActivity {
         mainUserRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new UserAdpter(MainActivity.this,usersArrayList);
         mainUserRecyclerView.setAdapter(adapter);
+
+        setbut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, setting.class);
+                startActivity(intent);
+            }
+        });
+
+        cumbut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(intent,10);
+            }
+        });
 
 
         if (auth.getCurrentUser() == null){
