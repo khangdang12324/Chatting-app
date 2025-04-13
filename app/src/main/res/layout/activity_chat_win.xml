@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/chatback"
+    android:background="@drawable/chatback1"
     tools:context=".chatWin">
 
     <LinearLayout
@@ -15,30 +15,33 @@
         android:id="@+id/ll1"
         android:gravity="center">
 
+        <!-- Ảnh đại diện -->
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profileimgg"
-            android:layout_width="@dimen/_80sdp"
-            android:layout_height="@dimen/_80sdp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:src="@drawable/photocamera"
             app:civ_border_color="@color/white"
-            android:layout_marginTop="@dimen/_7sdp"
-            app:civ_border_width="@dimen/_2sdp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:civ_border_width="2dp"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.226" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="12dp" />
 
+        <!-- Tên người nhận -->
         <TextView
             android:id="@+id/recivername"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ayushvishwakarma"
-            android:gravity="center"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
+            android:textSize="16sp"
             android:fontFamily="@font/poppins_regular"
-            android:textSize="@dimen/_15sdp"
-            android:layout_margin="@dimen/_10sdp"/>
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/profileimgg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -95,10 +98,10 @@
             app:cardCornerRadius="@dimen/_25sdp">
 
             <ImageView
-                android:layout_width="@dimen/_15sdp"
-                android:layout_height="@dimen/_15sdp"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
                 android:layout_gravity="center"
-                android:background="@drawable/sendbut" />
+                android:background="@drawable/sendbut1" />
 
         </androidx.cardview.widget.CardView>
 

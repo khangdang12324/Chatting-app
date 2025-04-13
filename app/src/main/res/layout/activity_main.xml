@@ -5,98 +5,131 @@
     android:id="@+id/mainUserRecyclerVieww"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mainback"
+    android:background="@drawable/mainback1"
     tools:context=".MainActivity">
 
+    <!-- Toolbar -->
     <LinearLayout
         android:id="@+id/toolBar"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="63dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
         android:layout_marginStart="23dp"
-        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_22sdp"
         android:layout_marginEnd="25dp"
-        android:background="@color/white"
-        android:gravity="right"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginLeft="23dp"
-        android:layout_marginRight="25dp">
+        android:orientation="horizontal"
+        android:gravity="end|center_vertical"
+        android:paddingEnd="10dp">
 
         <TextView
-            android:layout_width="10dp"
-            android:layout_height="83dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:fontFamily="@font/poppins_bold"
             android:text="@string/app_name"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="@dimen/_20sdp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:gravity="center_vertical" />
 
         <ImageView
             android:id="@+id/logoutimg"
             android:layout_width="@dimen/_28sdp"
             android:layout_height="34dp"
-            android:layout_gravity="center"
-            android:layout_marginRight="@dimen/_10sdp"
-            android:background="@drawable/logout" />
-
+            android:src="@drawable/logout1" />
     </LinearLayout>
 
+    <!-- RecyclerView -->
+
+    <!-- Bottom Menu: Camera - Chat - Setting -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mainUserRecyclerView"
-        android:layout_width="376dp"
-        android:layout_height="380dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@+id/bottomMenu"
         android:layout_below="@id/toolBar"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="159dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="110dp" />
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="14dp" />
 
-    <ImageView
-        android:id="@+id/camBut"
-        android:layout_width="47dp"
-        android:layout_height="38dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
+    <LinearLayout
+        android:id="@+id/bottomMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="263dp"
-        android:layout_marginRight="263dp"
-        android:layout_marginBottom="42dp"
-        android:src="@drawable/camera" />
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal"
+        android:gravity="center">
 
-    <ImageView
-        android:layout_width="47dp"
-        android:layout_height="38dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="178dp"
-        android:layout_marginRight="178dp"
-        android:layout_marginBottom="42dp"
-        android:src="@drawable/chat" />
+        <!-- Camera -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginHorizontal="12dp">
 
-    <ImageView
-        android:id="@+id/settingBut"
-        android:layout_width="47dp"
-        android:layout_height="38dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="99dp"
-        android:layout_marginRight="99dp"
-        android:layout_marginBottom="42dp"
-        android:src="@drawable/sett" />
+            <ImageView
+                android:id="@+id/camBut"
+                android:layout_width="47dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/camera1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Camera"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Chat -->
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginHorizontal="12dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="47dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/chat2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chat"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Setting -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginHorizontal="12dp">
+
+            <ImageView
+                android:id="@+id/settingBut"
+                android:layout_width="47dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/setting1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Setting"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
 
 </RelativeLayout>

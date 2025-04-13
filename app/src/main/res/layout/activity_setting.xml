@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/settingback"
+    android:background="@drawable/settingblue"
     tools:context=".setting">
 
     <ImageView
@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.649"
-        app:srcCompat="@drawable/photocamera" />
+        app:srcCompat="@drawable/photocamera2" />
 
     <EditText
         android:id="@+id/settingname"
@@ -49,7 +49,7 @@
 
     <Button
         android:id="@+id/donebutt"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/signup"
         android:layout_width="@dimen/_100sdp"
         android:layout_height="@dimen/_35sdp"
         android:text="Save"

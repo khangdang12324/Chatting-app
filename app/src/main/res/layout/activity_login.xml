@@ -5,7 +5,7 @@
     android:id="@+id/mainUserRecyclerView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/one"
+    android:background="@drawable/one2"
     tools:context=".login">
 
     <ImageView
@@ -125,7 +125,7 @@
         android:id="@+id/logbutton"
         android:layout_width="@dimen/_250sdp"
         android:layout_height="@dimen/_45sdp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/signup"
         android:text="LOGIN"
         android:textSize="@dimen/_20sdp"
         android:textStyle="bold"

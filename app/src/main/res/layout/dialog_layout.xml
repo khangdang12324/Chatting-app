@@ -11,7 +11,7 @@
         android:id="@+id/logoutdia"
         android:layout_width="@dimen/_45sdp"
         android:layout_height="@dimen/_45sdp"
-        android:src="@drawable/logout"
+        android:src="@drawable/logout1"
         android:layout_gravity="center"
         android:layout_margin="13dp"/>
 
@@ -20,6 +20,7 @@
         android:layout_height="wrap_content"
         android:text="Do You really want to \n log out?"
         android:textSize="19dp"
+        android:textColor="@color/white"
         android:gravity="center"
         android:layout_margin="@dimen/_8sdp"
         android:fontFamily="@font/poppins_regular"/>
@@ -37,7 +38,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="No"
-            android:backgroundTint="@color/black"/>
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white"/>
 
         <Button
             android:id="@+id/yesbnt"
@@ -47,7 +49,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="Yes"
-            android:backgroundTint="@color/black"/>
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white"/>
 
     </LinearLayout>
 

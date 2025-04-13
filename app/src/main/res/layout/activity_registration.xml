@@ -5,14 +5,14 @@
     android:id="@+id/mainUserRecyclerView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/two"
+    android:background="@drawable/two2"
     tools:context=".registration">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profilerg"
         android:layout_width="151dp"
         android:layout_height="130dp"
-        android:src="@drawable/photocamera"
+        android:src="@drawable/photocamera2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -176,7 +176,7 @@
         android:id="@+id/signupbutton"
         android:layout_width="@dimen/_250sdp"
         android:layout_height="@dimen/_45sdp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/signup"
         android:text="SIGNUP"
         android:textSize="@dimen/_20sdp"
         android:textStyle="bold"
